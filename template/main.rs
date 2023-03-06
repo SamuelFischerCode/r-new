@@ -1,4 +1,4 @@
-// Prod: #![forbid(warnings)] & #![deny(clippy::unwrap_used)]
+// Commit: #![forbid(warnings)] & #![deny(clippy::unwrap_used)]
 // Dev: #![allow(warnings)]
 #![allow(warnings)]
 
