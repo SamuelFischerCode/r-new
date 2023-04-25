@@ -51,6 +51,14 @@ fn main() {
     )
     .expect("Error writing .idea/runConfigurations/Run.xml");
 
+    let output = String::from_utf8(include_bytes!("../template/Test.xml").to_vec())
+        .expect("Error converting byte stream in binary to string (try building again)");
+    fs::write(
+        format!("{}/.idea/runConfigurations/Test.xml", argv[1]),
+        output,
+    )
+        .expect("Error writing .idea/runConfigurations/Run.xml");
+
     fs::remove_dir_all(format!("{}/.git/", argv[1]))
         .unwrap_or_else(|_| println!("couldn't delete .git"));
 }
